@@ -38,13 +38,14 @@ namespace PBOB2_2023.View
 
         private void v_ArsipJudulKombi_Load(object sender, System.EventArgs e)
         {
-            dataGridView1.DataSource = PenjadwalanSidangSkripsiContext.ArsipJudul("Disetujui");
+            DataTable arsipJudul = PengajuanSidangSkripsiContext.ArsipJudul("Disetujui");
+            dataGridView1.DataSource = arsipJudul;
         }
 
         private void textBox1_TextChanged(object sender, System.EventArgs e)
         {
             string keyword = textBox1.Text;
-            DataTable searchResult = PenjadwalanSidangSkripsiContext.Search(keyword);
+            DataTable searchResult = PengajuanSidangSkripsiContext.Search(keyword);
             dataGridView1.DataSource = searchResult;
         }
     }

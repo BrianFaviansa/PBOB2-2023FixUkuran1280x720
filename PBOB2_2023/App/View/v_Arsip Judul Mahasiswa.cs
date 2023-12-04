@@ -11,7 +11,6 @@ namespace PBOB2_2023.View
         public v_ArsipJudulMahasiswa()
         {
             InitializeComponent();
-            dataGridView1.DataSource = PenjadwalanSidangSkripsiContext.ArsipJudul("Disetujui");
         }
 
         private void v_ArsipJudulMahasiswa_buttonPengajuanSidang_Click(object sender, EventArgs e)
@@ -53,7 +52,8 @@ namespace PBOB2_2023.View
 
         private void v_ArsipJudulMahasiswa_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ArsipJudulContext.all("Disetujui");
+            DataTable arsipJudul = PengajuanSidangSkripsiContext.ArsipJudul("Disetujui");
+            dataGridView1.DataSource = arsipJudul;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

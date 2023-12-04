@@ -3,6 +3,7 @@ using NpgsqlTypes;
 using PBOB2_2023.App.Core;
 using PBOB2_2023.App.Model;
 using System.Data;
+using System.Windows.Forms;
 
 namespace PBOB2_2023.App.Context
 {
@@ -92,6 +93,25 @@ namespace PBOB2_2023.App.Context
             };
             commandExecutor(query, parameters);
 
+        }
+
+        public static DataTable ArsipJudul(string status)
+        {
+            string query = $"SELECT nama_mahasiswa, nim, prodi, judul, pembimbing1, pembimbing2 from {table} WHERE status = '{status}' ORDER BY id_pengajuan_sidang";
+            DataTable dataArsipJudul = queryExecutor(query);
+            return dataArsipJudul;
+        }
+        public static DataTable Search(string keyword)
+        {
+            string query = $"SELECT * FROM {table} WHERE nama_mahasiswa ILIKE '%{keyword}%' OR nim ILIKE '%{keyword}%' OR judul ILIKE '%{keyword}%' OR pembimbing1 ILIKE '%{keyword}%' OR pembimbing2 ILIKE '%{keyword}%'";
+            DataTable searchData = queryExecutor(query);
+            return searchData;
+        }
+        public static DataTable viewJadwalSidang()
+        {
+            string query = $"SELECT id_pengajuan_sidang, nama_mahasiswa, nim, prodi, tanggal, jam, judul, ruang, pembimbing1, pembimbing2 from {table} ORDER BY id_jadwal_sidang";
+            DataTable dataPengajuanSemproAll = queryExecutor(query);
+            return dataPengajuanSemproAll;
         }
 
 
