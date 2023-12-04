@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01468386-B00C-4B1E-A3E7-AC4EBB2F3C90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PBOB2_2023</RootNamespace>
+    <AssemblyName>PBOB2_2023</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.8.0.0\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.8.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Context\ArsipJudulContext.cs" />
+    <Compile Include="App\Context\DosenContext.cs" />
+    <Compile Include="App\Context\DosenMinatContext.cs" />
+    <Compile Include="App\Context\HimpunanContext.cs" />
+    <Compile Include="App\Context\MahasiswaContext.cs" />
+    <Compile Include="App\Context\MinatContext.cs" />
+    <Compile Include="App\Context\PengajuanSemproContext.cs" />
+    <Compile Include="App\Context\PengajuanSidangSkripsiContext.cs" />
+    <Compile Include="App\Context\PenjadwalanSemproContext.cs" />
+    <Compile Include="App\Context\PenjadwalanSidangSkripsiContext.cs" />
+    <Compile Include="App\Context\ProdiContext.cs" />
+    <Compile Include="App\Context\StatusContext.cs" />
+    <Compile Include="App\Context\UserLoginContext.cs" />
+    <Compile Include="App\Core\CekLogin.cs" />
+    <Compile Include="App\Core\DatabaseWrapper.cs" />
+    <Compile Include="App\Model\M_Dosen.cs" />
+    <Compile Include="App\Model\M_DosenMinat.cs" />
+    <Compile Include="App\Model\M_Himpunan.cs" />
+    <Compile Include="App\Model\M_Mahasiswa.cs" />
+    <Compile Include="App\Model\M_Minat.cs" />
+    <Compile Include="App\Model\M_PengajuanSempro.cs" />
+    <Compile Include="App\Model\M_PengajuanSidangSkripsi.cs" />
+    <Compile Include="App\Model\M_PenjadwalanSempro.cs" />
+    <Compile Include="App\Model\M_PenjadwalanSidangSkripsi.cs" />
+    <Compile Include="App\Model\M_Prodi.cs" />
+    <Compile Include="App\Model\M_UserLogin.cs" />
+    <Compile Include="App\View\v_Administrasi Dosen Minat Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Dosen Minat Operator.Designer.cs">
+      <DependentUpon>v_Administrasi Dosen Minat Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Detail Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Detail Mahasiswa.Designer.cs">
+      <DependentUpon>v_Data Dosen Detail Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Detail Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Detail Operator.Designer.cs">
+      <DependentUpon>v_Data Dosen Detail Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Mahasiswa.Designer.cs">
+      <DependentUpon>v_Data Dosen Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi User Login Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi User Login Operator.Designer.cs">
+      <DependentUpon>v_Administrasi User Login Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App\View\v_Data Dosen Detail Dosen .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Detail Dosen .Designer.cs">
+      <DependentUpon>v_Data Dosen Detail Dosen .cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Operator.Designer.cs">
+      <DependentUpon>v_Data Dosen Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sidang Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sidang Mahasiswa.Designer.cs">
+      <DependentUpon>v_Pengajuan Sidang Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sidang Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sidang Operator.Designer.cs">
+      <DependentUpon>v_Pengajuan Sidang Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Dosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Dosen.Designer.cs">
+      <DependentUpon>v_Data Dosen Dosen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Kombi Bimbingan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Kombi Bimbingan.Designer.cs">
+      <DependentUpon>v_Data Dosen Kombi Bimbingan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Kombi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Data Dosen Kombi.Designer.cs">
+      <DependentUpon>v_Data Dosen Kombi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Operator.Designer.cs">
+      <DependentUpon>v_Jadwal Sidang Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Operator.Designer.cs">
+      <DependentUpon>v_Jadwal Sempro Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Dosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Dosen.Designer.cs">
+      <DependentUpon>v_Jadwal Sidang Dosen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Himpunan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Himpunan.Designer.cs">
+      <DependentUpon>v_Jadwal Sidang Himpunan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Mahasiswa.Designer.cs">
+      <DependentUpon>v_Jadwal Sidang Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Kombi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sidang Kombi.Designer.cs">
+      <DependentUpon>v_Jadwal Sidang Kombi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Kombi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Kombi.Designer.cs">
+      <DependentUpon>v_Jadwal Sempro Kombi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Himpunan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Himpunan.Designer.cs">
+      <DependentUpon>v_Jadwal Sempro Himpunan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Dosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Dosen.Designer.cs">
+      <DependentUpon>v_Jadwal Sempro Dosen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Jadwal Sempro Mahasiswa.Designer.cs">
+      <DependentUpon>v_Jadwal Sempro Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Dosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Dosen.Designer.cs">
+      <DependentUpon>v_Arsip Judul Dosen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Kombi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Kombi.Designer.cs">
+      <DependentUpon>v_Arsip Judul Kombi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Mahasiswa.Designer.cs">
+      <DependentUpon>v_Arsip Judul Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Arsip Judul Operator.Designer.cs">
+      <DependentUpon>v_Arsip Judul Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Program Studi Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Program Studi Operator.Designer.cs">
+      <DependentUpon>v_Administrasi Program Studi Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Operator.Designer.cs">
+      <DependentUpon>v_Administrasi Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Data Profil Dosen Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Data Profil Dosen Operator.Designer.cs">
+      <DependentUpon>v_Administrasi Data Profil Dosen Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Mahasiswa Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Mahasiswa Operator.Designer.cs">
+      <DependentUpon>v_Administrasi Mahasiswa Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Himpunan Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Administrasi Himpunan Operator.Designer.cs">
+      <DependentUpon>v_Administrasi Himpunan Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sempro Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sempro Operator.Designer.cs">
+      <DependentUpon>v_Pengajuan Sempro Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sempro Mahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_Pengajuan Sempro Mahasiswa.Designer.cs">
+      <DependentUpon>v_Pengajuan Sempro Mahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\v_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\v_login.Designer.cs">
+      <DependentUpon>v_login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="App\View\v_Administrasi Dosen Minat Operator.resx">
+      <DependentUpon>v_Administrasi Dosen Minat Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Detail Mahasiswa.resx">
+      <DependentUpon>v_Data Dosen Detail Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Detail Operator.resx">
+      <DependentUpon>v_Data Dosen Detail Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Mahasiswa.resx">
+      <DependentUpon>v_Data Dosen Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Administrasi User Login Operator.resx">
+      <DependentUpon>v_Administrasi User Login Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="App\View\v_Data Dosen Detail Dosen .resx">
+      <DependentUpon>v_Data Dosen Detail Dosen .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Operator.resx">
+      <DependentUpon>v_Data Dosen Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Pengajuan Sidang Mahasiswa.resx">
+      <DependentUpon>v_Pengajuan Sidang Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Pengajuan Sidang Operator.resx">
+      <DependentUpon>v_Pengajuan Sidang Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Dosen.resx">
+      <DependentUpon>v_Data Dosen Dosen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Kombi Bimbingan.resx">
+      <DependentUpon>v_Data Dosen Kombi Bimbingan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Data Dosen Kombi.resx">
+      <DependentUpon>v_Data Dosen Kombi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sidang Operator.resx">
+      <DependentUpon>v_Jadwal Sidang Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sempro Operator.resx">
+      <DependentUpon>v_Jadwal Sempro Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sidang Dosen.resx">
+      <DependentUpon>v_Jadwal Sidang Dosen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sidang Himpunan.resx">
+      <DependentUpon>v_Jadwal Sidang Himpunan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sidang Mahasiswa.resx">
+      <DependentUpon>v_Jadwal Sidang Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sidang Kombi.resx">
+      <DependentUpon>v_Jadwal Sidang Kombi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sempro Kombi.resx">
+      <DependentUpon>v_Jadwal Sempro Kombi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sempro Himpunan.resx">
+      <DependentUpon>v_Jadwal Sempro Himpunan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sempro Dosen.resx">
+      <DependentUpon>v_Jadwal Sempro Dosen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Jadwal Sempro Mahasiswa.resx">
+      <DependentUpon>v_Jadwal Sempro Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Arsip Judul Dosen.resx">
+      <DependentUpon>v_Arsip Judul Dosen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Arsip Judul Kombi.resx">
+      <DependentUpon>v_Arsip Judul Kombi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Arsip Judul Mahasiswa.resx">
+      <DependentUpon>v_Arsip Judul Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Arsip Judul Operator.resx">
+      <DependentUpon>v_Arsip Judul Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Administrasi Program Studi Operator.resx">
+      <DependentUpon>v_Administrasi Program Studi Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Administrasi Operator.resx">
+      <DependentUpon>v_Administrasi Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Administrasi Data Profil Dosen Operator.resx">
+      <DependentUpon>v_Administrasi Data Profil Dosen Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Administrasi Mahasiswa Operator.resx">
+      <DependentUpon>v_Administrasi Mahasiswa Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Administrasi Himpunan Operator.resx">
+      <DependentUpon>v_Administrasi Himpunan Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Pengajuan Sempro Operator.resx">
+      <DependentUpon>v_Pengajuan Sempro Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_Pengajuan Sempro Mahasiswa.resx">
+      <DependentUpon>v_Pengajuan Sempro Mahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\v_login.resx">
+      <DependentUpon>v_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
