@@ -141,6 +141,7 @@
             this.v_User_Login_Operator_buttonAdministrasi.Text = "Administrasi";
             this.v_User_Login_Operator_buttonAdministrasi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.v_User_Login_Operator_buttonAdministrasi.UseVisualStyleBackColor = false;
+            this.v_User_Login_Operator_buttonAdministrasi.Click += new System.EventHandler(this.v_User_Login_Operator_buttonAdministrasi_Click_1);
             // 
             // v_User_Login_Operator_buttonArsipJudul
             // 

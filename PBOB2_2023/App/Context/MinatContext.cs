@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBOB2_2023.App.Context
 {
@@ -84,6 +85,7 @@ namespace PBOB2_2023.App.Context
         public static DataTable alldistinctdetailminat(string minatselected)
         {
             string query = $"SELECT DISTINCT detail_minat FROM {table} WHERE minat = '{minatselected}'";
+            //MessageBox.Show(query);
             DataTable dataMinat = queryExecutor(query);
             return dataMinat;
         }

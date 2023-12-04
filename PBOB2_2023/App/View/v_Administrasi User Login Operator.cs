@@ -143,6 +143,12 @@ namespace PBOB2_2023.App.View
             dataGridView1.DataSource = UserLoginContext.all();
 
         }
+
+        private void v_User_Login_Operator_buttonAdministrasi_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new v_AdministrasiOperator().Show();
+        }
     } 
 
 }

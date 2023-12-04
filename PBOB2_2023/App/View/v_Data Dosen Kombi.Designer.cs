@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(462, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 39);
+            this.label1.Size = new System.Drawing.Size(156, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "DATA DOSEN";
             // 
@@ -276,6 +276,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(206, 21);
             this.comboBox2.TabIndex = 69;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -293,7 +294,7 @@
             this.label7.Location = new System.Drawing.Point(200, 646);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 26);
+            this.label7.Size = new System.Drawing.Size(160, 26);
             this.label7.TabIndex = 67;
             this.label7.Text = "Detail Bidang Minat";
             // 
@@ -304,7 +305,7 @@
             this.label6.Location = new System.Drawing.Point(200, 622);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 26);
+            this.label6.Size = new System.Drawing.Size(112, 26);
             this.label6.TabIndex = 66;
             this.label6.Text = "Bidang Minat";
             // 
@@ -315,7 +316,7 @@
             this.label5.Location = new System.Drawing.Point(200, 598);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 26);
+            this.label5.Size = new System.Drawing.Size(109, 26);
             this.label5.TabIndex = 65;
             this.label5.Text = "Nama Dosen";
             // 

@@ -39,8 +39,7 @@ namespace PBOB2_2023.View
 
             comboBox2.DataSource = minat;
 
-            string minatselected = comboBox2.SelectedItem.ToString();
-            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            dataselected = comboBox2.SelectedItem.ToString();
 
             DataTable datadetailminat = MinatContext.alldistinctdetailminat(dataselected);
             List<string> detail_minat = new List<string>();
@@ -50,14 +49,7 @@ namespace PBOB2_2023.View
                 string detail_minat_dosen = datadetailminat.Rows[i]["detail_minat"].ToString();
                 detail_minat.Add(detail_minat_dosen);
             }
-
             comboBox3.DataSource = detail_minat;
-
-
-        }
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dataselected = comboBox1.SelectedItem.ToString();
         }
         private void v_DataDosenKombi_buttonJadwalSempro_Click(object sender, System.EventArgs e)
         {
@@ -153,13 +145,25 @@ namespace PBOB2_2023.View
         private void button13_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new v_DataDosenKombiBimbingan(dataselected).Show();
+            string nama_dosen = comboBox1.SelectedItem.ToString();
+            new v_DataDosenKombiBimbingan(nama_dosen).Show();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataselected = comboBox1.SelectedItem.ToString();
+            
+            string nama_minat = comboBox2.SelectedItem.ToString();
 
+            DataTable datadetailminat = MinatContext.alldistinctdetailminat(nama_minat);
+            List<string> detail_minat = new List<string>();
+
+            for (int i = 0; i < datadetailminat.Rows.Count; i++)
+            {
+                string detail_minat_dosen = datadetailminat.Rows[i]["detail_minat"].ToString();
+                detail_minat.Add(detail_minat_dosen);
+            }
+
+            comboBox3.DataSource = detail_minat;
         }
-
     }
 }
